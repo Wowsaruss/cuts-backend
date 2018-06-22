@@ -1,12 +1,13 @@
 const { GraphQLServer } = require('graphql-yoga');
-const graphqlAPI = require('./api');
+const gqlServerConfig = require('./api');
 
-const serverSettings = {
+const serverOptions = {
   port: 5000,
   endpoint: '/graphql',
   playground: '/docs',
+  tracing: true,
+  debug: true,
 };
 
-const server = new GraphQLServer(graphqlAPI);
-
-server.start(serverSettings, ({ port }) => console.log(`Server on port ${port}`));
+const server = new GraphQLServer(gqlServerConfig);
+server.start(serverOptions, ({ port }) => console.log(`Server on port ${port}`));
