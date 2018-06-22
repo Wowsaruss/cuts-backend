@@ -1,0 +1,12 @@
+type User {
+  _id: String
+  firstName: String
+  lastName: String
+  email: String
+  gender: String
+  phoneNumber: String
+}
+
+extend type Query {
+  User(id: String): User!
+}
