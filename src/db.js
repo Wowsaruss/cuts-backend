@@ -1,6 +1,6 @@
 const mongoose = require('mongoose');
 
-const connectToDB = (url = 'mongodb://localhost/done') => {
+const connectToDB = url => {
   return mongoose.connect(url);
 };
 
